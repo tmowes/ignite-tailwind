@@ -1,51 +1,26 @@
 'use client'
 
-import { formatBytes } from '@/helpers/format-bytes'
-import { Trash2, UploadCloud } from 'lucide-react'
 import { useFileInput } from '../Root'
+import { FileItem } from '../FileItem'
 
 export function FileList() {
   const { files } = useFileInput()
 
+  if (files.length === 0) {
+    return null
+  }
+
   return (
     <div className="mt-4 space-y-3">
-      {files.map(({ name, size }) => {
-        return (
-          <div
-            key={name}
-            className="group flex items-start gap-4 rounded-lg border border-zinc-200 p-4"
-          >
-            <div className="rounded-full border-4 border-orange-100 bg-orange-200 p-2 text-orange-600">
-              <UploadCloud className="h-4 w-4" />
-            </div>
-
-            <div className="flex flex-1 flex-col items-start gap-1">
-              <div className="flex flex-col">
-                <span className="text-sm font-medium text-zinc-700">
-                  {name}
-                </span>
-                <span className="text-sm text-zinc-500">
-                  {formatBytes(size)}
-                </span>
-              </div>
-
-              <div className="flex w-full items-center gap-3">
-                <div className="h-2 flex-1 rounded-full bg-zinc-100">
-                  <div className="h-2 w-4/5 rounded-full bg-orange-600" />
-                </div>
-                <span className="text-sm font-medium text-zinc-700">80%</span>
-              </div>
-            </div>
-
-            <button
-              type="button"
-              className="ml-auto rounded-md p-2 hover:bg-zinc-50"
-            >
-              <Trash2 className="h-5 w-5 text-zinc-500" />
-            </button>
-          </div>
-        )
-      })}
+      {files.map(({ name, size, type }) => (
+        <FileItem
+          key={name}
+          name={name}
+          size={size}
+          type={type}
+          state="error"
+        />
+      ))}
     </div>
   )
 }
