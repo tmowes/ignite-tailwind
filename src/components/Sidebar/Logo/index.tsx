@@ -195,8 +195,8 @@ export function Logo() {
             y2={10}
             gradientUnits="userSpaceOnUse"
           >
-            <stop stopColor="#53389E" />
-            <stop offset={1} stopColor="#6941C6" />
+            <stop stopColor="#D66400" />
+            <stop offset={1} stopColor="#D56832" />
           </linearGradient>
           <clipPath id="clip0_226_307">
             <rect x={3} y={2} width={32} height={32} rx={8} fill="#fff" />
