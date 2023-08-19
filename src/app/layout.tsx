@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="antialiased">
+    <html lang="en" className="dark antialiased">
       <body className={inter.className}>
         <div className="relative min-h-screen dark:bg-zinc-900 lg:grid lg:grid-cols-app">
           <Sidebar />

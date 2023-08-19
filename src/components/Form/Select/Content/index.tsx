@@ -12,7 +12,7 @@ export function Content(props: ContentProps) {
         sideOffset={8}
         side="bottom"
         position="popper"
-        className="animate-slideUpAndFade group z-10 w-[var(--radix-select-trigger-width)] overflow-hidden rounded-lg border border-zinc-200 bg-white will-change-[opacity,transform] dark:border-zinc-700 dark:bg-zinc-800"
+        className="group z-10 w-[var(--radix-select-trigger-width)] animate-slideDownAndFade overflow-hidden rounded-lg border border-zinc-200 bg-white will-change-[opacity,transform] dark:border-zinc-700 dark:bg-zinc-800"
         {...attrs}
       >
         <ScrollArea.Root className="h-full w-full" type="auto">
